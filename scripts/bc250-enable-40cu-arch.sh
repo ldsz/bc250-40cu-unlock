@@ -283,6 +283,8 @@ do_build() {
     local built
     built="$(build_module)"
     install_module "$built"
+	info "Updating initramfs..."
+    sudo mkinitcpio -P
     echo ""
     info "Done! Patched amdgpu module installed."
     info "Next: sudo $0 enable"
